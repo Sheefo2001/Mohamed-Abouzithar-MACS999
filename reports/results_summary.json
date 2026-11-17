@@ -1,0 +1,222 @@
+{
+  "dataset": {
+    "subjects_found": 117,
+    "subjects_used": 92,
+    "windows_train": 517,
+    "windows_val": 167,
+    "windows_test": 242
+  },
+  "thresholds": {
+    "mae_mse_threshold": 0.0137,
+    "mae_mse_lower_p2_5": 0.000545,
+    "mae_mse_lower_p5": 0.000568,
+    "mae_mse_lower_p10": 0.000691,
+    "mae_mse_val_median": 0.002883,
+    "mae_log10_mse_val_median": -2.540155,
+    "min_speed_std": 10.0,
+    "h1_threshold": 0.6443,
+    "delta_h_threshold": 0.08,
+    "log_f0_threshold": 1.85,
+    "h1_stepup_margin": 0.05,
+    "regimes": {
+      "balanced": {
+        "name": "Balanced (Recommended)",
+        "mae_mse_threshold": 0.0137,
+        "mae_mse_lower_p2_5": 0.000545,
+        "mae_mse_lower_p5": 0.000568,
+        "mae_mse_lower_p10": 0.000691,
+        "mae_mse_val_median": 0.002883,
+        "mae_log10_mse_val_median": -2.540155,
+      "mae_mse_lower_p2_5": 0.000545,
+      "mae_mse_lower_p5": 0.000568,
+      "mae_mse_lower_p10": 0.000691,
+      "mae_mse_val_median": 0.002883,
+      "mae_log10_mse_val_median": -2.540155,
+    "mae_mse_lower_p2_5": 0.000545,
+    "mae_mse_lower_p5": 0.000568,
+    "mae_mse_lower_p10": 0.000691,
+    "mae_mse_val_median": 0.002883,
+    "mae_log10_mse_val_median": -2.540155,
+        "min_speed_std": 10.0,
+        "h1_threshold": 0.6443,
+        "delta_h_threshold": 0.08,
+        "log_f0_threshold": 1.85,
+        "h1_stepup_margin": 0.05
+      },
+      "frictionless": {
+        "name": "Frictionless (Enterprise Usability)",
+        "mae_mse_threshold": 0.0137,
+        "mae_mse_lower_p2_5": 0.000545,
+        "mae_mse_lower_p5": 0.000568,
+        "mae_mse_lower_p10": 0.000691,
+        "mae_mse_val_median": 0.002883,
+        "mae_log10_mse_val_median": -2.540155,
+      "mae_mse_lower_p2_5": 0.000545,
+      "mae_mse_lower_p5": 0.000568,
+      "mae_mse_lower_p10": 0.000691,
+      "mae_mse_val_median": 0.002883,
+      "mae_log10_mse_val_median": -2.540155,
+    "mae_mse_lower_p2_5": 0.000545,
+    "mae_mse_lower_p5": 0.000568,
+    "mae_mse_lower_p10": 0.000691,
+    "mae_mse_val_median": 0.002883,
+    "mae_log10_mse_val_median": -2.540155,
+        "min_speed_std": 10.0,
+        "h1_threshold": 0.6146,
+        "delta_h_threshold": -999.0,
+        "log_f0_threshold": -999.0,
+        "h1_stepup_margin": 0.05
+      },
+      "high_security": {
+        "name": "High-Security (EER Operating Point)",
+        "mae_mse_threshold": 0.0137,
+        "mae_mse_lower_p2_5": 0.000545,
+        "mae_mse_lower_p5": 0.000568,
+        "mae_mse_lower_p10": 0.000691,
+        "mae_mse_val_median": 0.002883,
+        "mae_log10_mse_val_median": -2.540155,
+      "mae_mse_lower_p2_5": 0.000545,
+      "mae_mse_lower_p5": 0.000568,
+      "mae_mse_lower_p10": 0.000691,
+      "mae_mse_val_median": 0.002883,
+      "mae_log10_mse_val_median": -2.540155,
+    "mae_mse_lower_p2_5": 0.000545,
+    "mae_mse_lower_p5": 0.000568,
+    "mae_mse_lower_p10": 0.000691,
+    "mae_mse_val_median": 0.002883,
+    "mae_log10_mse_val_median": -2.540155,
+        "min_speed_std": 10.0,
+        "h1_threshold": 0.9058,
+        "delta_h_threshold": 0.12,
+        "log_f0_threshold": 2.0,
+        "h1_stepup_margin": 0.05
+      }
+    }
+  },
+  "genuine_test": {
+    "n_samples": 242,
+    "mean_mse": 0.0048,
+    "mean_h1": 0.8639,
+    "std_h1": 0.1774,
+    "frr_passive_pct": 7.44,
+    "frr_active_pct": 28.1,
+    "frr_cascaded_pct": 28.1,
+    "frr_post_escalation_150ms_pct": 22.31,
+    "escalation_trigger_rate_pct": 5.79
+  },
+  "attacker_tiers_test": {
+    "scripted_bot": {
+      "n_samples": 242,
+      "mean_mse": 0.0003,
+      "mean_h1": 0.0,
+      "std_h1": 0.0,
+      "far_passive_pct": 0.0,
+      "far_active_pct": 0.0,
+      "far_cascaded_pct": 0.0,
+      "far_post_escalation_150ms_pct": 0.0,
+      "escalation_trigger_pct": 0.0
+    },
+    "replay_langevin": {
+      "n_samples": 242,
+      "mean_mse": 0.0048,
+      "mean_h1": 0.8634,
+      "std_h1": 0.1771,
+      "far_passive_pct": 92.56,
+      "far_active_pct": 71.9,
+      "far_cascaded_pct": 71.9,
+      "far_post_escalation_150ms_pct": 71.9,
+      "escalation_trigger_pct": 5.79
+    },
+    "ou_generator": {
+      "n_samples": 242,
+      "mean_mse": 0.0009,
+      "mean_h1": 1.0485,
+      "std_h1": 0.1443,
+      "far_passive_pct": 100.0,
+      "far_active_pct": 24.79,
+      "far_cascaded_pct": 24.79,
+      "far_post_escalation_150ms_pct": 24.79,
+      "escalation_trigger_pct": 0.0
+    },
+    "fgn_matched": {
+      "n_samples": 242,
+      "mean_mse": 0.0112,
+      "mean_h1": 0.7659,
+      "std_h1": 0.1778,
+      "far_passive_pct": 67.77,
+      "far_active_pct": 33.47,
+      "far_cascaded_pct": 33.47,
+      "far_post_escalation_150ms_pct": 33.47,
+      "escalation_trigger_pct": 5.37
+    }
+  },
+  "overall_test": {
+    "far_passive_pct": 65.08,
+    "far_active_pct": 32.54,
+    "far_cascaded_pct": 32.54,
+    "far_post_escalation_150ms_pct": 32.54,
+    "auc_passive": 0.3622,
+    "auc_active": 0.5982,
+    "auc_h1_stage1_all_tiers": 0.5982,
+    "auc_h1_stage1_t1_t3": 0.4642,
+    "auc_h1_per_tier": {
+      "replay_langevin": 0.5015,
+      "ou_generator": 0.2241,
+      "fgn_matched": 0.6672
+    }
+  },
+  "two_stage_escalation_150ms": {
+    "framework": "Two-Stage Adaptive Probing (Path B: Section 3.6.5 Step-Up, Section 3.8.3 Oracle Bound)",
+    "unobtrusive_50ms_share_pct": 94.21,
+    "genuine_escalation_trigger_pct": 5.79,
+    "genuine_frr_post_escalation_pct": 22.31,
+    "overall_far_post_escalation_pct": 32.54,
+    "evaluation_mode": "analytical_oracle_upper_bound",
+    "oracle_challenge_far_bound_pct": 0.0,
+    "tier_far_post_escalation_pct": {
+      "scripted_bot": 0.0,
+      "replay_langevin": 71.9,
+      "ou_generator": 24.79,
+      "fgn_matched": 33.47
+    },
+    "nist_alignment": "NIST SP 800-207 dynamic risk-triggered step-up policy."
+  },
+  "operating_regimes_comparison": {
+    "balanced": {
+      "name": "Balanced (Recommended)",
+      "threshold_h1": 0.6443,
+      "genuine_frr_pct": 28.1,
+      "tier_far_pct": {
+        "scripted_bot": 0.0,
+        "replay_langevin": 71.9,
+        "ou_generator": 24.79,
+        "fgn_matched": 33.47
+      },
+      "overall_far_pct": 32.54
+    },
+    "frictionless": {
+      "name": "Frictionless (Enterprise Usability)",
+      "threshold_h1": 0.6146,
+      "genuine_frr_pct": 18.6,
+      "tier_far_pct": {
+        "scripted_bot": 0.0,
+        "replay_langevin": 81.82,
+        "ou_generator": 100.0,
+        "fgn_matched": 50.41
+      },
+      "overall_far_pct": 58.06
+    },
+    "high_security": {
+      "name": "High-Security (EER Operating Point)",
+      "threshold_h1": 0.9058,
+      "genuine_frr_pct": 57.85,
+      "tier_far_pct": {
+        "scripted_bot": 0.0,
+        "replay_langevin": 41.74,
+        "ou_generator": 9.92,
+        "fgn_matched": 11.57
+      },
+      "overall_far_pct": 15.81
+    }
+  }
+}

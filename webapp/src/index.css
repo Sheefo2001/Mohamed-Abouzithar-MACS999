@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.css2?family=Inter:wght@300;400;600;800;900&display=swap');
+
+:root {
+  --bg-dark: #050505;
+  --panel-bg: rgba(15, 15, 20, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --accent-cyan: #00f0ff;
+  --accent-purple: #b026ff;
+  --accent-red: #ff2a2a;
+  --text-main: #f0f4f8;
+  --text-muted: #6b7280;
+  --success: #00ff88;
+  --danger: #ff2a2a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.05), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(176, 38, 255, 0.05), transparent 40%);
+}
+
+/* Premium Glassmorphism */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Typography */
+.title-glow {
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-red {
+  background: -webkit-linear-gradient(45deg, var(--accent-red), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn-premium {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(176, 38, 255, 0.1));
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: var(--text-main);
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+}
+
+.btn-premium:hover {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.3), rgba(176, 38, 255, 0.3));
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(176, 38, 255, 0.4);
+  transform: scale(1.02);
+}
+
+.btn-premium:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 320px;
+  border-right: 1px solid var(--glass-border);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 16px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-main);
+}
+
+.nav-link.active {
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.15), transparent);
+  border-left: 4px solid var(--accent-cyan);
+  box-shadow: -10px 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.main-content {
+  flex: 1;
+  padding: 60px;
+  overflow-y: auto;
+}
+
+/* Metrics Grid */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.metric-value {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 16px 0;
+  line-height: 1;
+}
+
+.metric-value.success { color: var(--success); text-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+.metric-value.danger { color: var(--danger); text-shadow: 0 0 20px rgba(255, 42, 42, 0.4); }
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Simulator Canvas */
+.simulator-container {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.sim-canvas {
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--glass-border);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+
+.sim-canvas::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.sim-chart {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.sim-point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px currentColor;
+  transition: all 0.05s linear;
+}
+
+.sim-svg-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Alerts and Indicators */
+.bypassed-alert {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 42, 42, 0.2);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  animation: flash 1s infinite;
+  z-index: 10;
+}
+
+.secured-alert {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid var(--success);
+  color: var(--success);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  z-index: 10;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Scenario Selector */
+.scenario-selector {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.scenario-btn {
+  flex: 1;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scenario-btn.active.clean {
+  background: rgba(0, 255, 136, 0.1);
+  border-color: var(--success);
+  color: var(--success);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+.scenario-btn.active.dumb {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.scenario-btn.active.deepfake {
+  background: rgba(255, 42, 42, 0.1);
+  border-color: var(--danger);
+  color: var(--danger);
+  box-shadow: 0 0 20px rgba(255, 42, 42, 0.2);
+}
+
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.image-gallery img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* -------------------------------------
+   THESIS PRESENTATION UPGRADES
+--------------------------------------*/
+
+/* 1. Latency Glitch Effect (50ms Active Probe) */
+@keyframes probe-glitch {
+  0% { transform: translate(0); filter: hue-rotate(0deg); }
+  20% { transform: translate(-15px, 10px); filter: hue-rotate(90deg) contrast(250%) invert(10%); box-shadow: inset 0 0 150px var(--accent-cyan); }
+  40% { transform: translate(15px, -10px); filter: hue-rotate(180deg) blur(2px); box-shadow: inset 0 0 100px var(--accent-purple); }
+  60% { transform: translate(-10px, 15px); filter: hue-rotate(270deg) contrast(200%); box-shadow: inset 0 0 150px var(--danger); }
+  80% { transform: translate(10px, -15px); filter: hue-rotate(360deg) invert(20%); }
+  100% { transform: translate(0); filter: hue-rotate(0deg); }
+}
+
+.glitch-active {
+  animation: probe-glitch 0.05s linear infinite; /* Insanely fast 50ms strobe */
+  border-color: var(--accent-cyan) !important;
+}
+
+/* 2. Theater Mode (Projector Optimization) */
+body.theater-mode .sidebar {
+  display: none !important;
+}
+
+body.theater-mode .main-content {
+  padding: 20px;
+}
+
+body.theater-mode .simulator-container {
+  flex-direction: column;
+}
+
+body.theater-mode .sim-canvas {
+  width: 100% !important;
+  height: 50vh !important;
+}
+
+body.theater-mode .title-glow {
+  font-size: 3rem !important;
+}
+
+body.theater-mode .bypassed-alert,
+body.theater-mode .secured-alert {
+  font-size: 1.5rem;
+  padding: 16px 32px;
+}
+
+/* Upgraded Simulator Controls & Badges */
+.regime-selector {
+  display: flex;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+}
+
+.regime-btn {
+  flex: 1;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.regime-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.regime-btn.active.balanced {
+  background: rgba(0, 255, 136, 0.15);
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.regime-btn.active.frictionless {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.regime-btn.active.high-sec {
+  background: rgba(255, 42, 42, 0.15);
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.dfa-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.dfa-badge {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dfa-badge-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dfa-badge-value {
+  font-size: 1.25rem;
+  font-weight: 900;
+  font-family: monospace;
+}
+
+.pedagogical-card {
+  background: rgba(10, 10, 18, 0.75);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.audit-terminal {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: rgba(240, 244, 248, 0.85);
+  max-height: 140px;
+  overflow-y: auto;
+}

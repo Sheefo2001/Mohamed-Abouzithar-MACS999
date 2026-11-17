@@ -1,0 +1,57 @@
+{
+  "mae_mse_threshold": 0.0137,
+  "mae_mse_lower_p2_5": 0.000545,
+  "mae_mse_lower_p5": 0.000568,
+  "mae_mse_lower_p10": 0.000691,
+  "mae_mse_val_median": 0.002883,
+  "mae_log10_mse_val_median": -2.540155,
+  "min_speed_std": 10.0,
+  "h1_threshold": 0.6443,
+  "delta_h_threshold": 0.08,
+  "log_f0_threshold": 1.85,
+  "h1_stepup_margin": 0.05,
+  "regimes": {
+    "balanced": {
+      "name": "Balanced (Recommended)",
+      "mae_mse_threshold": 0.0137,
+      "mae_mse_lower_p2_5": 0.000545,
+      "mae_mse_lower_p5": 0.000568,
+      "mae_mse_lower_p10": 0.000691,
+      "mae_mse_val_median": 0.002883,
+      "mae_log10_mse_val_median": -2.540155,
+      "min_speed_std": 10.0,
+      "h1_threshold": 0.6443,
+      "delta_h_threshold": 0.08,
+      "log_f0_threshold": 1.85,
+      "h1_stepup_margin": 0.05
+    },
+    "frictionless": {
+      "name": "Frictionless (Enterprise Usability)",
+      "mae_mse_threshold": 0.0137,
+      "mae_mse_lower_p2_5": 0.000545,
+      "mae_mse_lower_p5": 0.000568,
+      "mae_mse_lower_p10": 0.000691,
+      "mae_mse_val_median": 0.002883,
+      "mae_log10_mse_val_median": -2.540155,
+      "min_speed_std": 10.0,
+      "h1_threshold": 0.6146,
+      "delta_h_threshold": -999.0,
+      "log_f0_threshold": -999.0,
+      "h1_stepup_margin": 0.05
+    },
+    "high_security": {
+      "name": "High-Security (EER Operating Point)",
+      "mae_mse_threshold": 0.0137,
+      "mae_mse_lower_p2_5": 0.000545,
+      "mae_mse_lower_p5": 0.000568,
+      "mae_mse_lower_p10": 0.000691,
+      "mae_mse_val_median": 0.002883,
+      "mae_log10_mse_val_median": -2.540155,
+      "min_speed_std": 10.0,
+      "h1_threshold": 0.9058,
+      "delta_h_threshold": 0.12,
+      "log_f0_threshold": 2.0,
+      "h1_stepup_margin": 0.05
+    }
+  }
+}
